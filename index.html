@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro GRWM 🎀</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain"></div>
+
+  <main class="player">
+    <header class="top">
+      <div class="brand">✦ RETRO GRWM ✦</div>
+      <div class="status"><span class="dot"></span> LIVE</div>
+    </header>
+
+    <section class="screen-area">
+      <div class="camera-card">
+        <div class="screen-header">
+          <span>CAMERA / MIRROR</span>
+          <span id="rec">● REC</span>
+        </div>
+
+        <div class="camera-screen">
+          <video id="camera" autoplay playsinline muted></video>
+          <div class="camera-message" id="cameraMessage">
+            <div class="camera-icon">📷</div>
+            <p>Camera is waiting...</p>
+            <button id="startCamera">OPEN CAMERA</button>
+          </div>
+          <div class="scanlines"></div>
+          <div class="camera-time" id="cameraTime">00:00:00</div>
+        </div>
+
+        <div class="camera-controls">
+          <button id="capture">📸 TAKE PHOTO</button>
+          <button id="switchCamera">↔ FLIP</button>
+        </div>
+      </div>
+
+      <aside class="music-card">
+        <div class="cassette">
+          <div class="cassette-label">
+            <span>GRWM MIX</span>
+            <strong id="songTitle">Your Song</strong>
+            <small id="artist">Add your music</small>
+          </div>
+          <div class="reel reel-left"></div>
+          <div class="reel reel-right"></div>
+          <div class="tape-window"></div>
+        </div>
+
+        <div class="now-playing">NOW PLAYING</div>
+        <div class="song-title" id="displayTitle">Your Song</div>
+        <div class="artist" id="displayArtist">Add your music</div>
+
+        <input id="progress" type="range" min="0" max="100" value="0">
+
+        <div class="time">
+          <span id="currentTime">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+
+        <div class="controls">
+          <button id="prev">◀◀</button>
+          <button class="play" id="play">▶</button>
+          <button id="next">▶▶</button>
+        </div>
+
+        <label class="volume">
+          VOL
+          <input id="volume" type="range" min="0" max="1" step="0.01" value="0.7">
+        </label>
+
+        <input id="musicFile" type="file" accept="audio/*">
+        <label class="file-label" for="musicFile">＋ ADD SONG</label>
+        <div class="music-library">
+          <div class="library-heading">
+            <span>♫ MY MUSIC</span>
+            <small>saved on this browser</small>
+          </div>
+          <div id="musicList" class="music-list"></div>
+        </div>
+
+        <audio id="audio"></audio>
+      </aside>
+    </section>
+
+    <section class="steps">
+      <button class="step active">💧 SKINCARE</button>
+      <button class="step">💄 MAKEUP</button>
+      <button class="step">💇 HAIR</button>
+      <button class="step">👗 OUTFIT</button>
+    </section>
+
+    <section class="gallery-section">
+      <div class="gallery-title">YOUR RETRO SNAPSHOTS</div>
+      <div id="gallery" class="gallery">
+        <p class="empty">Your photos will appear here ✦</p>
+      </div>
+    </section>
+
+    <canvas id="canvas"></canvas>
+    <div id="flash"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
